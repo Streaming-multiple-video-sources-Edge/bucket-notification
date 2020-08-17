@@ -23,7 +23,7 @@ s3client = boto3.client('s3', endpoint_url=service_point,
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def classify():
     print("IN CLASSIFY++++++++++++++++")
     # S3 object location 
