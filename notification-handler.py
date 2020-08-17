@@ -30,7 +30,12 @@ def classify():
     image_location = {} 
 
     # Parse the given json 
-    data = request.get_json()
+    try:
+      data = request.get_json()
+    execpt:
+      print("could not parse json file")
+    
+    
     logging.info(data)
     image_location['object_name'] = data['s3']['object']['key']
     image_location['bucket_name'] =  data['s3']['bucket']['name'] 
